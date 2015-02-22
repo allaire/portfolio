@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+//
+// Imports
+//
+// Mixins
+@import "bourbon";
+
+// CDN
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+//
+// Variables
+//
+$breakpoint: 650px;
+$blue: #2ea9e8;
+$gray-light: darken(#999, 5%);
+$black: lighten(#000, 10%);
+$white: #fff;
+
+//
+// Base
+//
+html {
+  background: $white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: $gray-light;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  @media (min-width: 650px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  padding: 80px 40px;
+  border-top: 3px solid $blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  color: $black;
+}
+
+p {
+  line-height: 1.7em;
+}
+
+a {
+  padding-bottom: 1px;
+  color: $blue;
+  text-decoration: none;
+  border-bottom: 1px solid $blue;
+
+  &:hover {
+    color: darken($blue, 15%);
+  }
+}
+
+a,
+button {
+  @include transition(background 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out);
+}
+
+img {
+  max-width: 100%;
+}
+
+::-moz-selection {
+  background-color: $blue;
+  color: $white;
+}
+
+::selection {
+  background-color: $blue;
+  color: $white;
+}
+
+//
+// Layout
+//
+.container {
+  max-width: 840px;
+  margin: auto;
+}
+
+//
+// Modules
+//
+.card-face {
+  img {
+    width: 124px;
+  }
+}
+
+.card-title {
+  line-height: 1.6em;
+  font-size: 26px;
+
+  @media (min-width: $breakpoint) {
+    font-size: 34px;
+  }
+}
+
+.card-cta {
+  color: lighten($black, 20%);
+
+  &:after {
+    content: "▶";
+    position: relative;
+    top: -2px;
+    left: 10px;
+    font-size: 8px;
+  }
+}
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid lighten($gray-light, 20%);
+  font-size: 14px;
+  @include clearfix;
+
+  @media (min-width: 650px) {
+    font-size: 16px;
+  }
+
+  a {
+    color: lighten($black, 10%);
+    border: 0;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.footer-left {
+  float: left;
+  margin-top: -2px;
+  font-size: 22px;
+
+  @media (min-width: 650px) {
+    font-size: 26px;
+  }
+
+  a {
+    margin-right: 10px;
+  }
+}
+
+.footer-right {
+  float: right;
+}

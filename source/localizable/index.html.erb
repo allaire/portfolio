@@ -1,0 +1,20 @@
+<div class="container">
+  <section class="card">
+    <div class="card-content">
+      <div class="card-face"><%= image_tag("me.png", alt: "Mathieu Allaire") %></div>
+      <h1 class="card-title"><%= t("card.title") %></h1>
+      <p><%= t("card.content_1") %></p>
+      <p><%= t("card.content_2") %></p>
+      <p><%= t("card.content_3") %></p>
+      <p class="card-cta"><%= t("card.cta") %></p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-left">
+      <a href="https://github.com/allaire" class="icon ion-social-github"></a>
+      <a href="https://twitter.com/allaire" class="icon ion-social-twitter"></a>
+      <a href="https://linkedin.com/in/mathieuallaire" class="icon ion-social-linkedin"></a>
+    </div>
+    <a href="<%= locale_root(reverse_locale(I18n.locale)) %>" data-locale="<%= reverse_locale(I18n.locale) %>" class="js-locale footer-right"><%= t("locale") %></a>
+  </footer>
+</div>
