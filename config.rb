@@ -20,7 +20,11 @@ helpers do
   end
 end
 
+# Old website redirects
+redirect "en/index.html", to: "/"
+
 activate :deploy do |deploy|
+  deploy.build_before = true
   deploy.method = :git
 end
 
