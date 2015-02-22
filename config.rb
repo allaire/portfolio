@@ -20,6 +20,10 @@ helpers do
   end
 end
 
+activate :deploy do |deploy|
+  deploy.method = :git
+end
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
