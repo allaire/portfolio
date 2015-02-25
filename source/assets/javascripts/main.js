@@ -1,4 +1,10 @@
 $(function() {
+  $(window).on("load page:load", function() {
+    setTimeout(function() {
+      $("html").addClass("loaded");
+    }, 250);
+  });
+
   function hasLocalStorage() {
     try {
       return 'localStorage' in window && window['localStorage'] !== null;

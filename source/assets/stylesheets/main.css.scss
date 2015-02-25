@@ -156,3 +156,33 @@ img {
 .footer-right {
   float: right;
 }
+
+// FX
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(slideDownFadeIn) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(-10px));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+.cssanimations .container {
+  opacity: 0;
+}
+
+.cssanimations.loaded .container {
+  @include animation(slideDownFadeIn 0.75s cubic-bezier(.45, .03, .51, .95) forwards, fadeIn 0.75s cubic-bezier(.45, .03, .51, .95) forwards);
+}
